@@ -21,18 +21,17 @@
       v-model="valid"
       lazy-validation
       class="mb-10 mx-md-14 px-md-10"
-     
       >
-        <h1 class="text-center" id="title" style="font-size: 40px">FeedbChat</h1>
-        <v-container>
-          <v-btn block color="error" @click="google">
-            <v-icon class="pl-3 mr-6" left dark>fab fa-google </v-icon>
-                inicia sesion con Google 
-          </v-btn>
-           <v-btn class="mt-1 mb-4" block  color="info" @click="facebook">
-            <v-icon left dark>fab fa-facebook </v-icon>
-                inicia sesion con Facebook
-          </v-btn>
+      <h1 class="text-center" id="title" style="font-size: 40px">FeedbChat</h1>
+      <v-container>
+       <v-btn block color="deep-purple lighten-2 white--text" @click="google">
+        <v-icon class="pl-3 mr-6" left dark>fab fa-google </v-icon>
+            inicia sesion con Google 
+       </v-btn>
+      <v-btn class="mt-1 mb-4" block  color="deep-purple darken-3 white--text" @click="facebook">
+        <v-icon left dark>fab fa-facebook </v-icon>
+           inicia sesion con Facebook
+        </v-btn>
         </v-container>
       <v-text-field
         v-model="input.email"
@@ -77,7 +76,7 @@
     </v-col>
      <v-col cols="12" sm="12" md="6" >
       <div class="mx-md-8 px-md-4 ">
-        <v-img  src="/assets/img/login.svg" aspect-ratio="0.9"  contain>
+        <v-img class="d-none d-sm-flex" src="/assets/img/login.svg" aspect-ratio="0.9"  contain>
         </v-img>
       </div>
     </v-col>

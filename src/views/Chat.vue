@@ -1,10 +1,13 @@
 <template>
   <v-layout>
       <v-flex>
-          <v-card class="deep-purple lighten-4" >
-              <v-card-text>
-                <!-- <h3>Bienvenid@ {{user.email}} !!!</h3> -->
+        <v-card color="deep-purple lighten-5">
+           <v-card-text >
+                <h3 >Bienvenid@ {{user.email}}</h3>
               </v-card-text>
+        </v-card>
+          <v-card class="deep-purple lighten-4" >
+             
               <v-card-text style="height: 60vh; overflow: auto" v-chat-scroll>
 
                <div v-for="(msj, index) in mensajes" :key="index" :class="msj.nombre === user.email ? 'text-start' : 'text-end' " 
@@ -18,6 +21,7 @@
                </div>
 
              </v-card-text>
+             <v-card color="deep-purple lighten-5">
              <v-card-text>
              <v-form @submit.prevent="enviarMensaje" v-model="valido">
                 <v-text-field v-model="mensaje" label="Escribe tu mensaje aquí"
@@ -26,6 +30,7 @@
                 </v-text-field>
              </v-form>
              </v-card-text>
+             </v-card>
           </v-card>
       </v-flex>
   </v-layout>
@@ -40,9 +45,7 @@ export default {
     return {
       mensaje: '',
       valido: false,
-      reglas: [
-      v => !!v || 'Tienes que escribir un mensaje'
-      ],
+      
       mensajes: []
     }
   },

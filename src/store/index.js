@@ -10,8 +10,6 @@ export default new Vuex.Store({
   state: {
     user: null,
     error: null,
-    tareas: [],
-    tarea: {nombre: '', id: ''}
   },
   mutations: {
     SET_USER(state, payload){
@@ -20,59 +18,10 @@ export default new Vuex.Store({
     SET_ERROR(state, payload){
       state.error = payload
     },
-    SET_TAREAS(state, payload){
-      state.tareas = payload
-    },
-    SET_TAREA(state, payload){
-      state.tarea = payload
-    },
-    SET_DELETE_TAREA(state, payload){
-      state.tareas = state.tareas.filter(tarea => tarea.id !== payload)
-    },
-
+    
     },
       actions: {
-    setTarea({commit, state}, id){
-      db.collection(state.user.email).doc(id).get()
-      .then(doc => {
-        let tarea = doc.data()
-        tarea.id = doc.id
-        commit('SET_TAREA', tarea)
-       })
-     },
-     
-     agregarTarea({state}, nombreTarea){
-      db.collection(state.user.email).add({
-        nombre: nombreTarea
-      })
-      .then(doc => {
-        console.log(doc.id)
-        router.push({name: 'Home'})
-      })
-    },
-    editTarea({state}, tarea){
-        db.collection(state.user.email).doc(tarea.id).update({
-            nombre: tarea.nombre
-        })
-        .then(() => {
-            router.push({name: 'Home'})
-        })
-        .catch(error => console.log(error))
-    },
-    setTareas({commit, state}){
-      const tareas = []
-      db.collection(state.user.email).get()
-      .then(res => {
-        res.forEach(doc => {
-          console.log(doc.id)
-          console.log(doc.data())
-          let tarea = doc.data()
-          tarea.id = doc.id
-          tareas.push(tarea)
-        })
-        commit('SET_TAREAS', tareas)
-      })
-    },
+    
     // Crear usuario
     setUser({commit}, user){
       auth.createUserWithEmailAndPassword(  user.email, user.password)

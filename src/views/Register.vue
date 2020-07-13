@@ -15,13 +15,12 @@
    </v-snackbar>
    <v-row class="container ">
      <v-col cols="12" sm="12" md="6" >
-      <div class="mx-md-10 px-md-4 mb-10">
-        <v-img  src="/assets/img/registro.svg" aspect-ratio="0.9"  contain>
+      <div>
+        <v-img class="d-none d-sm-flex" src="/assets/img/registro.svg" aspect-ratio="0.9"  contain>
         </v-img>
        </div>
       </v-col>
-      <v-col cols="12" sm="12" md="6" class="pt-md-10">
-
+      <v-col cols="12" sm="12" md="6" class="pt-md-10 mt-md-1">
         <v-form
         @submit.prevent="setUser({email: input.email, password: input.pass1, name: input.name})"
         ref="form"
@@ -34,11 +33,11 @@
           <p> Es muy fácil! Sólo necesitas tu <br/>correo electrónico  para poder registrarte!!!</p>
         </v-container>
          <v-container>
-          <v-btn block color="error" @click="google">
+          <v-btn block color="deep-purple darken-3 white--text" @click="google">
             <v-icon class="pl-3 mr-6" left dark>fab fa-google </v-icon>
                 Regístrate con Google
           </v-btn>
-           <v-btn class="mt-1" block color="info" @click="facebook">
+           <v-btn class="mt-1" block color="deep-purple lighten-2 white--text" @click="facebook">
             <v-icon left dark>fab fa-facebook </v-icon>
                 Regístrate con Facebook
           </v-btn>
