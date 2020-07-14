@@ -53,18 +53,18 @@
         <p> ¿No estás registrado? <router-link href="" class="text-decoration-none" link to="/register"> Registrarme </router-link>
           </p>
       </v-container>
-    <v-container class=" d-sm-flex justify-sm-space-between mt-10">
+    <v-container class="d-sm-flex justify-sm-space-between mt-10">
       <v-btn
         :disabled="!valid"
         color="deep-purple lighten-1 white--text"
-        class="ml-8 mb-4 rounded-pill "
+        class=" boton ml-8 mb-3 rounded-pill "
         type="submit"
         >
         Ingresar
       </v-btn>
       <v-btn
         color="deep-purple darken-3 white--text"
-        class="ml-8 rounded-pill"
+        class=" boton ml-8 mb-3 rounded-pill"
         @click="reset"
         >
         Reset form
@@ -135,8 +135,6 @@ export default {
   }
 }
 </script>
-
-
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
@@ -144,7 +142,8 @@ export default {
   font-family: 'Lobster', cursive;
   font-size: 30px;
 }
-.row{
+.row {
   margin: 0 auto;
 }
+
 </style>
