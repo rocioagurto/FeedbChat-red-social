@@ -13,7 +13,11 @@ Vue.use(VueRouter)
     name: 'Login',
     component: () => import(/* webpackChunkName: "login" */ '../views/Login')
   },
- 
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import(/* webpackChunkName: "register" */ '../views/Register.vue')
+  },
   {
     path: '/',
     name: 'Chat',
@@ -22,12 +26,18 @@ Vue.use(VueRouter)
       requiresAuth: true
     }
   },
-  
   {
-    path: '/register',
-    name: 'Register',
-    component: () => import(/* webpackChunkName: "register" */ '../views/Register.vue')
+    path: '/nosotros',
+    name: 'Nosotros',
+    component: () => import(/* webpackChunkName: "register" */ '../views/Nosotros.vue')
   },
+  {
+    path: '*',
+    name: 'NotFound',
+    component: () => import(/* webpackChunkName: "notfound" */ '../views/NotFound.vue')
+  },
+  
+  
 ]
 
 const router = new VueRouter({

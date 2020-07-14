@@ -13,7 +13,7 @@
       </v-btn>
     </template>
    </v-snackbar>
-   <v-row class="container ">
+   <v-row class=" row container">
    <v-col cols="12" sm="12" md="6" class="pt-md-10">
     <v-form
      @submit.prevent="userLogin({email: input.email, password: input.password })"
@@ -59,7 +59,6 @@
         color="deep-purple lighten-1 white--text"
         class="ml-8 mb-4 rounded-pill "
         type="submit"
-      
         >
         Ingresar
       </v-btn>
@@ -71,7 +70,6 @@
         Reset form
        </v-btn>
       </v-container>
-      
      </v-form>
     </v-col>
      <v-col cols="12" sm="12" md="6" >
@@ -117,12 +115,9 @@ export default {
       try {
         const result = await firebase.auth().signInWithPopup(provider);
         const user = result.user;
-        this.$router.push('/chat')
+        this.$router.push('/')
         console.log(user)
-        
-        
-      // guardar en firestore
-     
+      // guardar en firestor
       } catch(error){
         console.log(error);
       }
@@ -148,5 +143,8 @@ export default {
 #title{
   font-family: 'Lobster', cursive;
   font-size: 30px;
+}
+.row{
+  margin: 0 auto;
 }
 </style>

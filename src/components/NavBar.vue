@@ -1,11 +1,10 @@
 <template>
   <div>
     <v-app-bar
-      color="transparent black--text"
+      color="deep-purple lighten-2"
       light
-      class="mb-sm-10 "
     >
-      <router-link to="/" class="text-decoration-none grey--text text--darken-3"> <v-toolbar-title id="title">FeedbChat</v-toolbar-title></router-link>
+      <router-link to="/" class="text-decoration-none grey--text text--darken-3"> <v-toolbar-title id="title"  class="white--text">FeedbChat</v-toolbar-title></router-link>
       <v-spacer></v-spacer>
       <v-menu
         left
@@ -16,40 +15,41 @@
             icon
             v-bind="attrs"
             v-on="on"
+             class="white--text"
           >
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
         </template>
 
-        <v-list>
-          <v-list-item link to="/acerca">
-            <v-list-item-title>
-              Sobre mí
+        <v-list  color="deep-purple darken-2"  >
+          <v-list-item link to="/nosotros">
+            <v-list-item-title class="white--text">
+              Nosotros
             </v-list-item-title>
           </v-list-item>
 
           <v-list-item link to="/" v-if="userExits">
-            <v-list-item-title>
+            <v-list-item-title class="white--text">
               Chat
             </v-list-item-title>
           </v-list-item>
          
         
             <v-list-item  @click="signOut"  v-if="userExits" link>
-              <v-list-item-title>
+              <v-list-item-title class="white--text">
                 Cerrar sesion
               </v-list-item-title>
             </v-list-item>
      
      
             <v-list-item v-if="!userExits" link to="/login">
-              <v-list-item-title>
+              <v-list-item-title class="white--text">
                 Iniciar sesión
               </v-list-item-title>
             </v-list-item>
 
             <v-list-item link to="/register"  v-if="!userExits">
-            <v-list-item-title>
+            <v-list-item-title class="white--text">
               Regístrate
             </v-list-item-title>
           </v-list-item>

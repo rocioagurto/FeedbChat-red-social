@@ -13,7 +13,7 @@
       </v-btn>
     </template>
    </v-snackbar>
-   <v-row class="container ">
+   <v-row class="container mx-auto">
      <v-col cols="12" sm="12" md="6" >
       <div>
         <v-img class="d-none d-sm-flex" src="/assets/img/registro.svg" aspect-ratio="0.9"  contain>
@@ -28,18 +28,18 @@
         lazy-validation
         class="mx-md-14 px-md-10 mt-4 "
         >
-          <h1 class="text-center">Registro de Usuario</h1>
-          <v-container class="text-center grey--text text--darken-1 mb-0" style="font-size: 13px">
-          <p> Es muy fácil! Sólo necesitas tu <br/>correo electrónico  para poder registrarte!!!</p>
-        </v-container>
+        <h1 class="text-center">Registro de Usuario</h1>
+         <v-container class="text-center grey--text text--darken-1 mb-0" style="font-size: 13px">
+           <p> Es muy fácil! Sólo necesitas tu <br/>correo electrónico  para poder registrarte!!!</p>
+         </v-container>
          <v-container>
           <v-btn block color="deep-purple darken-3 white--text" @click="google">
             <v-icon class="pl-3 mr-6" left dark>fab fa-google </v-icon>
-                Regístrate con Google
+              Regístrate con Google
           </v-btn>
-           <v-btn class="mt-1" block color="deep-purple lighten-2 white--text" @click="facebook">
-            <v-icon left dark>fab fa-facebook </v-icon>
-                Regístrate con Facebook
+          <v-btn class="mt-1" block color="deep-purple lighten-2 white--text" @click="facebook">
+          <v-icon left dark>fab fa-facebook </v-icon>
+            Regístrate con Facebook
           </v-btn>
         </v-container>
         <v-text-field
@@ -67,7 +67,6 @@
           require
         >
         </v-text-field>
-      
         <v-container class="text-center grey--text text--darken-1" style="font-size: 13px">
           <p> Al hacer click! en Crear cuenta, estás  aceptando los <a class="text-decoration-none" href="/terms" target="_blank">Terminos de uso</a> y <a class="text-decoration-none" href="/privacy" target="_blank">Politica de privacidad</a> de FeedbApp. <br/> ¿Ya tienes una cuenta? <router-link class="text-decoration-none" href="" link to="/login">Ingresar</router-link>
             </p>
@@ -78,7 +77,6 @@
           color="deep-purple lighten-1 white--text"
           class="ml-8 mt-6 rounded-pill "
           type="submit"
-    
           >
           Crear cuenta
         </v-btn>
@@ -90,8 +88,7 @@
           Reset Form
         </v-btn>
       </v-container>
-     
-      </v-form>
+     </v-form>
     </v-col>
    </v-row>
   </v-container>
@@ -139,7 +136,7 @@ export default {
       try {
         const result = await firebase.auth().signInWithPopup(provider);
         const user = result.user;
-        this.$router.push('/chat')
+        this.$router.push('/')
         console.log(user)
         
         const usuario = {
@@ -153,7 +150,6 @@ export default {
         console.log(error);
       }
     },
-
     reset(e) {
     e.preventDefault()
     this.$refs.form.reset()

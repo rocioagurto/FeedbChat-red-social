@@ -10,6 +10,11 @@ export default new Vuex.Store({
   state: {
     user: null,
     error: null,
+    alert: {
+      message: '',
+      snackbar: false
+    },
+    loading: false,
   },
   mutations: {
     SET_USER(state, payload){
@@ -18,14 +23,18 @@ export default new Vuex.Store({
     SET_ERROR(state, payload){
       state.error = payload
     },
-    
+    LOADING_ON(state){
+      state.loading = true
     },
-      actions: {
+    LOADING_OFF(state){state.loading = false}
+    },
     
+    actions: {
     // Crear usuario
     setUser({commit}, user){
       auth.createUserWithEmailAndPassword(  user.email, user.password)
       .then(res =>{
+       
         console.log(res)
         const userCreado = {
           email: res.user.email,
@@ -48,15 +57,17 @@ export default new Vuex.Store({
     },
     // Usuario logueado
     userLogin({commit}, user) {
+      commit('LOADING_ON')
       auth.signInWithEmailAndPassword(user.email, user.password)
       .then(res =>{
+        commit('LOADING_OFF')
         console.log(res)
         const userLogin = {
           email: res.user.email,
           uid: res.user.uid
         }
         commit('SET_USER', userLogin)
-        router.push('/chat')
+        router.push('/')
       })
       .catch(error => {
         console.log(error)
@@ -74,14 +85,7 @@ export default new Vuex.Store({
     detectUser({commit}, user){
       commit('SET_USER', user)
     },
-    setDeleteTarea({commit, state}, id){
-      db.collection(state.user.email).doc(id).delete()
-      .then(() => {
-        // dispatch('getTareas')
-         commit('SET_DELETE_TAREA', id)
-      })
-      .catch(error => console.log(error))
-    }
+
   },
   getters: {
     userExits(state){
