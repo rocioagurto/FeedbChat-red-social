@@ -28,7 +28,7 @@
             </v-list-item-title>
           </v-list-item>
 
-          <v-list-item link to="/chat" v-if="userExits">
+          <v-list-item link to="/" v-if="userExits">
             <v-list-item-title>
               Chat
             </v-list-item-title>

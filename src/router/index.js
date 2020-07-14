@@ -1,49 +1,28 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+
 
 import {auth} from '../firebase'
 
 Vue.use(VueRouter)
 
   const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home,
-    meta: {
-      requiresAuth: true
-    }
-  },
+ 
   {
     path: '/login',
     name: 'Login',
     component: () => import(/* webpackChunkName: "login" */ '../views/Login')
   },
+ 
   {
-    path: '/editar/:id',
-    name: 'Editar',
-    component: () => import(/* webpackChunkName: "editar" */ '../views/Editar'),
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: '/chat',
+    path: '/',
     name: 'Chat',
     component: () => import(/* webpackChunkName: "chat" */ '../views/Chat'),
     meta: {
       requiresAuth: true
     }
   },
-  {
-    path: '/agregar',
-    name: 'Agregar',
-    component: () => import(/* webpackChunkName: "agregar" */ '../views/Agregar'),
-    meta: {
-      requiresAuth: true
-    }
-  },
+  
   {
     path: '/register',
     name: 'Register',
