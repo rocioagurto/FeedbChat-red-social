@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-     <v-overlay :value="loading" color="deep-purple lighten-1" class="deep-purple--text" opacity="0.2">
+     <v-overlay :value="loading" color="deep-purple lighten-1" class="deep-purple--text" opacity="0.4">
        
       <v-progress-circular indeterminate size="94">Loading</v-progress-circular>
       
