@@ -1,5 +1,5 @@
 # FeedbChat
-Este es un proyecto de mini-red-social, tipo chat, donde se puede interactuar con una o mas personas. Está realizado con framework VueJS y con el framework CSS Vuetify. Este proyecto contiene:
+Este es un proyecto de mini-red-social, tipo chat, donde se puede interactuar con una o mas personas. Está realizado con framework VueJS y con el framework Vuetify. Este proyecto contiene:
 * Un Pagina de Registro de usuario.
 * Un login.
 * Pagina Nosotros
