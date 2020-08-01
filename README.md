@@ -8,8 +8,22 @@ Este es un proyecto de mini-red-social, tipo chat, donde se puede interactuar co
 ### Si quieres visualizar el proyecto, puedes presionar aquí:
 [Link del proyecto](https://red-social-396f9.web.app)
 
-### Pagina que usé para agregar imagenes al proyecto:
-[Link para descarga de Imagenes](https://undraw.co/illustrations)
+### Pagina que usé para agregar ilustraciones al proyecto:
+[Link para descarga de Ilustraciones](https://undraw.co/illustrations)
+
+### Vista previa
+*Registro de usuario: 
+![register](https://user-images.githubusercontent.com/60188980/89094290-64e98b80-d390-11ea-9142-0fe5db73f19d.JPG)
+
+*Login:
+![login](https://user-images.githubusercontent.com/60188980/89094300-759a0180-d390-11ea-9ad4-0172bcf347cd.JPG)
+
+*Nosotros:
+![Nosotros](https://user-images.githubusercontent.com/60188980/89094306-86e30e00-d390-11ea-8757-5ee8c1741a91.png)
+
+*Chat:
+![chat](https://user-images.githubusercontent.com/60188980/89094313-95c9c080-d390-11ea-9cb4-f57283db98fc.JPG)
+
 
 ## Project setup
 ```
